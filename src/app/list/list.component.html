@@ -1,3 +1,14 @@
-<ul *ngFor="let card of cards">
-  <li>{{ card.modalidade }}</li>
-</ul>
+<table>
+  <tr>
+    <th scope="col">Modalidade</th>
+    <th scope="col">Vestibular</th>
+    <th scope="col">Produto</th>
+    <th scope="col">Ativo</th>
+  </tr>
+  <tr *ngFor="let card of cardVestibular">
+    <td>{{ card.modalidade }}</td>
+    <td>{{ card.vestibular }}</td>
+    <td>{{ card.authorities }}</td>
+    <td>{{ card.ativo }}</td>
+  </tr>
+</table>

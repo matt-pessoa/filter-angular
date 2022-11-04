@@ -22,5 +22,11 @@
     "authorities": ["ROLE_GAMA_GO"],
     "modalidade": "PRESENCIAL",
     "restricoesVestibular": null
+  },
+  {
+    "ativo": true,
+    "authorities": ["ROLE_GAMA_PRIME", "ROLE_GAMA_GO"],
+    "modalidade": "PRESENCIAL",
+    "restricoesVestibular": null
   }
 ]
