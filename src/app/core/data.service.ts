@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-interface ICard {
-  ativo: boolean;
-  authorities: string[];
-  modalidade: string;
-  restricoesVestibular: number;
-}
-
-interface IVestibular {
-  id: number;
-  nome: string;
-}
+import { ICard, IVestibular } from '../shared/interfaces';
 
 @Injectable()
 export class DataService {
