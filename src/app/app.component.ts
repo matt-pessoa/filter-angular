@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './core/data.service';
-import { ICard, IVestibular } from './shared/interfaces';
+import { ICard, ICardVestibular, IVestibular } from './shared/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +10,36 @@ export class AppComponent implements OnInit {
   cards: ICard[] = [];
   vestibulares: IVestibular[] = [];
 
+  cardVestibular: ICardVestibular[] = [];
+
   constructor(private dataService: DataService) {}
 
-  getCards() {
-    this.dataService.getCards().subscribe((res) => (this.cards = res));
+  decodeVestibular(card: ICard) {
+    return this.vestibulares.find(
+      (vestibular) => vestibular.id === card.restricoesVestibular
+    )?.nome;
   }
 
-  getVestibulares() {
-    this.dataService
-      .getVestibulares()
-      .subscribe((res) => (this.vestibulares = res));
+  generateCardVestibular() {
+    this.dataService.getCards().subscribe((resCards) => {
+      this.cards = resCards;
+
+      this.dataService.getVestibulares().subscribe((resVests) => {
+        this.vestibulares = resVests;
+
+        this.cardVestibular = this.cards.map((card) => {
+          return {
+            ativo: card.ativo,
+            authorities: card.authorities,
+            modalidade: card.modalidade,
+            vestibular: this.decodeVestibular(card),
+          };
+        });
+      });
+    });
   }
 
   ngOnInit(): void {
-    this.getCards();
-    this.getVestibulares();
+    this.generateCardVestibular();
   }
 }
