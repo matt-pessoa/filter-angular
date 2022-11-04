@@ -1,0 +1,26 @@
+[
+  {
+    "ativo": true,
+    "authorities": ["ROLE_GAMA_CLUBE"],
+    "modalidade": "TODAS",
+    "restricoesVestibular": 28801
+  },
+  {
+    "ativo": true,
+    "authorities": ["ROLE_GAMA_PRIME"],
+    "modalidade": "ONLINE",
+    "restricoesVestibular": 28813
+  },
+  {
+    "ativo": true,
+    "authorities": ["ROLE_GAMA_CLUBE"],
+    "modalidade": "TODAS",
+    "restricoesVestibular": 28801
+  },
+  {
+    "ativo": true,
+    "authorities": ["ROLE_GAMA_GO"],
+    "modalidade": "PRESENCIAL",
+    "restricoesVestibular": null
+  }
+]
