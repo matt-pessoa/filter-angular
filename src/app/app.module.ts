@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { ListComponent } from './list/list.component';
+import { FilterComponent } from './filter/filter.component';
+import { ListComponent } from './filter/list/list.component';
 
 @NgModule({
-  declarations: [AppComponent, ListComponent],
+  declarations: [AppComponent, FilterComponent, ListComponent],
   imports: [BrowserModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],

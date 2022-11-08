@@ -1,0 +1,34 @@
+<ul>
+  <li *ngFor="let modalidade of modalidades">
+    <input
+      (change)="onFilter($event, 'modalidadePicker')"
+      type="radio"
+      name="modalidade"
+      [value]="modalidade"
+    />{{ modalidade }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let vestibular of vestibulares">
+    <input
+      (change)="onFilter($event, 'vestibularPicker')"
+      type="radio"
+      name="vestibular"
+      [value]="vestibular"
+    />{{ vestibular }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let produto of produtos">
+    <input
+      (change)="onFilter($event, 'produtoPicker')"
+      type="checkbox"
+      name="produto"
+      [value]="produto"
+    />{{ produto }}
+  </li>
+</ul>
+
+<app-list [sourceList]="source.sift"></app-list>
